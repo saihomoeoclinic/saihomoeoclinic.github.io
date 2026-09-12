@@ -377,9 +377,9 @@
     background: var(--cream);
     border: 1px solid var(--cream-border);
     border-radius: var(--radius);
-    padding: 18px;
+    padding: 16px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
   }
 
@@ -392,10 +392,12 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
   .service-icon svg { width: 20px; height: 20px; color: var(--green-dark); }
-  .service-name { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+  .service-name { font-size: 14px; font-weight: 500; color: var(--text-dark); display: block; margin-bottom: 4px; }
+  .service-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
   /* ── APPOINTMENT ── */
   .appointment-box {
@@ -733,7 +735,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#appointment">Appointment</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://calendly.com/vikramdevops123/30min" class="nav-book" target="_blank">Book now</a></li>
+    <li><a href="#appointment" class="nav-book">Book now</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -746,7 +748,7 @@
     <li><a href="#services" onclick="toggleMenu()">Services</a></li>
     <li><a href="#appointment" onclick="toggleMenu()">Appointment</a></li>
     <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-    <li><a href="https://calendly.com/vikramdevops123/30min" target="_blank">Book now</a></li>
+    <li><a href="#appointment" onclick="toggleMenu()">Book now</a></li>
   </ul>
 </div>
 
@@ -766,7 +768,7 @@
     Plot No. 61/A, Vengal Rao Nagar, Hyderabad - 38
   </p>
   <div class="hero-btns">
-    <a href="https://calendly.com/vikramdevops123/30min" class="btn-primary" target="_blank">
+    <a href="#appointment" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       Book appointment
     </a>
@@ -824,52 +826,36 @@
     <h2 class="section-heading">Conditions treated</h2>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <span class="service-name">Migraine &amp; headaches</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><span class="service-name">Migraine &amp; headaches</span><p class="service-desc">Personalised remedies targeting root cause — not just pain relief.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <span class="service-name">Chronic diseases</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div><span class="service-name">Chronic diseases</span><p class="service-desc">Diabetes, thyroid, hypertension — managed with zero side effects.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <span class="service-name">Skin disorders</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><span class="service-name">Skin disorders</span><p class="service-desc">Eczema, psoriasis, acne — treated from within, not just topically.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <span class="service-name">Respiratory issues</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><span class="service-name">Respiratory issues</span><p class="service-desc">Asthma, allergies, sinusitis — long-term relief through homoeopathy.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <span class="service-name">Joint &amp; bone pain</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div><span class="service-name">Joint &amp; bone pain</span><p class="service-desc">Arthritis, back pain, sciatica — reduced pain without steroids.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <span class="service-name">Digestive problems</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div><span class="service-name">Digestive problems</span><p class="service-desc">IBS, acidity, constipation — gentle, effective gut healing.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <span class="service-name">Paediatric care</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><span class="service-name">Paediatric care</span><p class="service-desc">Safe for children — fever, allergies, growth issues treated gently.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <span class="service-name">General consultation</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — precise, personalised treatment for every patient.</p></div>
       </div>
     </div>
   </div>
@@ -979,6 +965,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
       ⭐⭐⭐⭐⭐ Review us on Google
     </a>
+    <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:6px;">Opens Google in a new tab — tap your browser's back button to return.</p>
     <a href="https://wa.me/919849272193" class="whatsapp-btn" target="_blank">
       <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
       Chat on WhatsApp
