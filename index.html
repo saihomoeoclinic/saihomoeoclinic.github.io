@@ -508,6 +508,68 @@
     gap: 8px;
   }
 
+  /* ── ENQUIRY FORM ── */
+  .enquiry-form {
+    background: var(--cream);
+    border: 1px solid var(--cream-border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .form-title {
+    font-size: 18px;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--cream-border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white);
+    outline: none;
+    font-family: 'Inter', sans-serif;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--green-mid);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--whatsapp);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: opacity 0.2s;
+  }
+  .form-submit:hover { opacity: 0.9; }
+  .form-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 8px;
+  }
+
   .review-btn {
     width: 100%;
     background: #4285F4;
@@ -858,6 +920,36 @@
       <span>Plot No. 61/A, Opp. More Super Market<br>Vengal Rao Nagar, Hyderabad – 38</span>
       <a href="https://maps.google.com/?q=Vengal+Rao+Nagar+Hyderabad" target="_blank" style="color:#1b4332;font-size:13px;margin-top:4px;">Open in Google Maps →</a>
     </div>
+    <div class="enquiry-form">
+      <h3 class="form-title">Send us an enquiry</h3>
+      <div class="form-group">
+        <label for="fname">Your name</label>
+        <input type="text" id="fname" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="fphone">Phone number</label>
+        <input type="tel" id="fphone" placeholder="Enter your mobile number">
+      </div>
+      <div class="form-group">
+        <label for="fcondition">Condition / reason for visit</label>
+        <input type="text" id="fcondition" placeholder="e.g. Migraine, Skin issue, General checkup">
+      </div>
+      <div class="form-group">
+        <label for="ftime">Preferred time</label>
+        <select id="ftime">
+          <option value="">Select preferred time</option>
+          <option>Morning (9 AM – 12 PM)</option>
+          <option>Afternoon (12 PM – 4 PM)</option>
+          <option>Evening (4 PM – 9 PM)</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="sendWhatsApp()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Send via WhatsApp
+      </button>
+      <p class="form-note">Your message will open in WhatsApp. Tap Send to submit.</p>
+    </div>
+
     <a href="https://g.page/r/CbmCDw_rGYH0EBE/review" class="review-btn" target="_blank">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
       ⭐⭐⭐⭐⭐ Review us on Google
@@ -879,6 +971,29 @@
 </footer>
 
 <script>
+  function sendWhatsApp() {
+    var name = document.getElementById('fname').value.trim();
+    var phone = document.getElementById('fphone').value.trim();
+    var condition = document.getElementById('fcondition').value.trim();
+    var time = document.getElementById('ftime').value;
+
+    if (!name) { alert('Please enter your name'); return; }
+    if (!phone) { alert('Please enter your phone number'); return; }
+    if (!condition) { alert('Please enter your condition or reason for visit'); return; }
+    if (!time) { alert('Please select a preferred time'); return; }
+
+    var message = "Hello Dr. Sumanth Kumar,\n\n"
+      + "I would like to book a consultation.\n\n"
+      + "Name: " + name + "\n"
+      + "Phone: " + phone + "\n"
+      + "Condition: " + condition + "\n"
+      + "Preferred time: " + time + "\n\n"
+      + "Please confirm my appointment. Thank you.";
+
+    var url = "https://wa.me/919849272193?text=" + encodeURIComponent(message);
+    window.open(url, '_blank');
+  }
+
   function toggleMenu() {
     var m = document.getElementById('mobileMenu');
     m.classList.toggle('open');
