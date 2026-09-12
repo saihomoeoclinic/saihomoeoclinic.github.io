@@ -74,20 +74,25 @@
 </head>
 <body>
 <nav>
-  <div class="nav-left">
+  <a href="index.html" class="nav-left" style="text-decoration:none;">
     <div class="nav-saibaba"><img src="saibaba.jpg" alt="Sai Baba"></div>
     <div class="nav-brand">
       <strong>Sai Krishna Teja Homoeo Clinic</strong>
       <span>Vengal Rao Nagar, Hyderabad</span>
     </div>
-  </div>
+  </a>
   <a href="index.html#appointment" class="nav-book">Book now</a>
 </nav>
 
-<div style="background:var(--green-dark);padding:8px 16px;">
-  <a href="index.html" style="color:#a7f3d0;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
-    ← Back to clinic home
+<div style="background:#92400e;color:#fef3c7;padding:10px 16px;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px;line-height:1.5;">
+  <span>🚧 Website under construction — content being updated. For appointments call <a href="tel:9849272193" style="color:#fcd34d;text-decoration:underline;">98492 72193</a> or <a href="https://wa.me/919849272193" style="color:#fcd34d;text-decoration:underline;">WhatsApp us</a>.</span>
+  <button onclick="this.parentElement.style.display='none'" aria-label="Close" style="background:transparent;border:none;color:#fef3c7;font-size:16px;cursor:pointer;flex-shrink:0;padding:0 4px;">✕</button>
+</div>
+<div style="background:#052e16;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+  <a href="index.html" style="color:#a7f3d0;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;">
+    ← Back to home
   </a>
+  <a href="index.html#appointment" style="background:#d97706;color:#fff;font-size:12px;padding:5px 12px;border-radius:6px;text-decoration:none;font-weight:500;">Book now</a>
 </div>
 
 <div class="breadcrumb">
@@ -251,7 +256,7 @@
       </div>
       <div style="margin-bottom:14px;">
         <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">Condition / reason for visit<span style="color:#dc2626;margin-left:3px;">*</span></label>
-        <input type="text" id="cp_fcondition" placeholder="e.g. Thyroid, Migraine, Skin issue" style="width:100%;padding:10px 14px;border:1px solid var(--cream-border);border-radius:var(--radius);font-size:14px;color:var(--text-dark);background:#fff;outline:none;font-family:Inter,sans-serif;" oninput="cpClearError('cp_fcondition')">
+        <input type="text" id="cp_fcondition" placeholder="e.g. Thyroid, Migraine, Skin issue" value="Skin disorder" style="width:100%;padding:10px 14px;border:1px solid var(--cream-border);border-radius:var(--radius);font-size:14px;color:var(--text-dark);background:#fff;outline:none;font-family:Inter,sans-serif;" oninput="cpClearError('cp_fcondition')">
         <p style="font-size:12px;color:#dc2626;margin-top:4px;display:none;" id="cp_fcondition-err">Please enter your condition</p>
       </div>
       <div style="margin-bottom:14px;">
