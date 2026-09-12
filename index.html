@@ -530,6 +530,21 @@
     gap: 8px;
   }
 
+  /* ── PAYMENT WARNING ── */
+  .payment-warning {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .payment-warning svg { color: #b45309; flex-shrink: 0; margin-top: 2px; }
+  .payment-warning strong { display: block; font-size: 13px; color: #92400e; margin-bottom: 4px; }
+  .payment-warning p { font-size: 12px; color: #92400e; line-height: 1.5; margin: 0; }
+
   /* ── ENQUIRY FORM ── */
   .enquiry-form {
     background: var(--cream);
@@ -585,12 +600,27 @@
     transition: opacity 0.2s;
   }
   .form-submit:hover { opacity: 0.9; }
+  .form-disclaimer {
+    font-size: 12px;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    margin-top: 10px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
   .form-note {
     font-size: 12px;
     color: var(--text-muted);
     text-align: center;
     margin-top: 8px;
   }
+  .required { color: #dc2626; margin-left: 3px; }
+  .field-error { font-size: 12px; color: #dc2626; margin-top: 4px; display: none; }
+  .input-error { border-color: #dc2626 !important; }
 
   .review-btn {
     width: 100%;
@@ -931,23 +961,30 @@
       <span>Plot No. 61/A, Opp. More Super Market<br>Vengal Rao Nagar, Hyderabad – 38</span>
       <a href="https://maps.google.com/?q=Vengal+Rao+Nagar+Hyderabad" target="_blank" style="color:#1b4332;font-size:13px;margin-top:4px;">Open in Google Maps →</a>
     </div>
+    <div class="payment-warning">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div>
+        <strong>Payment warning</strong>
+        <p>Do not make any online payment without confirming your appointment with Dr. Sumanth Kumar directly. The clinic does not collect advance payments online.</p>
+      </div>
+    </div>
     <div class="enquiry-form">
       <h3 class="form-title">Send us an enquiry</h3>
       <div class="form-group">
-        <label for="fname">Your name</label>
-        <input type="text" id="fname" placeholder="Enter your full name">
+        <label for="fname">Your name<span class="required">*</span></label>
+        <input type="text" id="fname" placeholder="Enter your full name" oninput="clearError('fname')"><p class="field-error" id="fname-err">Please enter your name</p>
       </div>
       <div class="form-group">
-        <label for="fphone">Phone number</label>
-        <input type="tel" id="fphone" placeholder="Enter your mobile number">
+        <label for="fphone">Phone number<span class="required">*</span></label>
+        <input type="tel" id="fphone" placeholder="10-digit mobile number" maxlength="10" pattern="[0-9]{10}" oninput="clearError('fphone')"><p class="field-error" id="fphone-err">Please enter your phone number</p>
       </div>
       <div class="form-group">
-        <label for="fcondition">Condition / reason for visit</label>
-        <input type="text" id="fcondition" placeholder="e.g. Migraine, Skin issue, General checkup">
+        <label for="fcondition">Condition / reason for visit<span class="required">*</span></label>
+        <input type="text" id="fcondition" placeholder="e.g. Migraine, Skin issue, General checkup" oninput="clearError('fcondition')"><p class="field-error" id="fcondition-err">Please enter your condition</p>
       </div>
       <div class="form-group">
-        <label for="ftime">Preferred time</label>
-        <select id="ftime">
+        <label for="ftime">Preferred time<span class="required">*</span></label>
+        <select id="ftime" onchange="clearError('ftime')">
           <option value="">Select preferred time</option>
           <option>Morning (9 AM – 12 PM)</option>
           <option>Afternoon (12 PM – 4 PM)</option>
@@ -959,6 +996,7 @@
         Send via WhatsApp
       </button>
       <p class="form-note">Your message will open in WhatsApp. Tap Send to submit.</p>
+      <p class="form-disclaimer">⚠️ Do not share sensitive personal or financial information through this form. This site has no payment system — we do not accept or request any online payments.</p>
     </div>
 
     <a href="https://g.page/r/CbmCDw_rGYH0EBE/review" class="review-btn" target="_blank">
@@ -980,19 +1018,31 @@
   <p class="footer-quote">"Live Life. Don't Live Away Life"</p>
   <p class="footer-quote-attr">— Master E.K.</p>
   <p class="footer-copy">© 2026 Sai Krishna Teja Homoeo Clinic. All rights reserved.</p>
+  <p class="footer-copy" style="margin-top:6px;">This website does not collect payments or sensitive personal data. Do not share financial or confidential information through this site.</p>
 </footer>
 
 <script>
+  function showError(id) {
+    document.getElementById(id).classList.add('input-error');
+    document.getElementById(id + '-err').style.display = 'block';
+  }
+  function clearError(id) {
+    document.getElementById(id).classList.remove('input-error');
+    document.getElementById(id + '-err').style.display = 'none';
+  }
   function sendWhatsApp() {
     var name = document.getElementById('fname').value.trim();
     var phone = document.getElementById('fphone').value.trim();
     var condition = document.getElementById('fcondition').value.trim();
     var time = document.getElementById('ftime').value;
+    var valid = true;
 
-    if (!name) { alert('Please enter your name'); return; }
-    if (!phone) { alert('Please enter your phone number'); return; }
-    if (!condition) { alert('Please enter your condition or reason for visit'); return; }
-    if (!time) { alert('Please select a preferred time'); return; }
+    if (!name) { showError('fname'); valid = false; }
+    if (!phone) { showError('fphone'); valid = false; }
+    else if (!/^[0-9]{10}$/.test(phone)) { showError('fphone'); document.getElementById('fphone-err').textContent = 'Please enter a valid 10-digit mobile number'; valid = false; }
+    if (!condition) { showError('fcondition'); valid = false; }
+    if (!time) { showError('ftime'); valid = false; }
+    if (!valid) return;
 
     var message = "Hello Dr. Sumanth Kumar,\n\n"
       + "I would like to book a consultation.\n\n"
