@@ -427,6 +427,10 @@
   .faq-a { font-size: 13px; color: var(--text-mid); line-height: 1.7; padding: 0 16px 14px; display: none; }
   .faq-a.open { display: block; }
 
+  /* ── MAP ── */
+  .map-directions-btn { display:block; text-decoration:none; margin-bottom:16px; }
+  .map-static { background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:18px; display:flex; gap:14px; align-items:center; }
+
   /* ── WHATSAPP FLOAT ── */
   .whatsapp-float-btn { position: fixed; bottom: 24px; right: 20px; width: 54px; height: 54px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; }
   .whatsapp-float-btn svg { width: 28px; height: 28px; }
@@ -860,7 +864,7 @@
     <div class="trust-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     </div>
-    B.H.M.S. Certified · Open 9 AM–9 PM
+    B.H.M.S. Certified · Mon–Sat 9 AM–1 PM & 5–9 PM
   </div>
 </div>
 
@@ -875,7 +879,7 @@
         <h3 class="doctor-name">Dr. Ch. Sumanth Kumar</h3>
         <p class="doctor-qual">B.H.M.S. (Osm) · Osmania University, Hyderabad</p>
         <span class="doctor-tag">Consultant Homoeopathic Physician</span>
-        <p class="doctor-desc">Dr. Ch. Sumanth Kumar is a qualified Homoeopathic Physician specialising in Computerised Super Speciality Homoeopathy. Practising at Sai Krishna Teja Homoeo Clinic in Vengal Rao Nagar, he offers personalised, evidence-based homoeopathic care for both chronic and acute conditions.</p>
+        <p class="doctor-desc">Dr. Ch. Sumanth Kumar is a Classical Homoeopathic Physician with 24+ years of experience, specialising in Computerised Super Speciality Homoeopathy. With over 25,000 patients treated, he practises at Sai Krishna Teja Homoeo Clinic in Vengal Rao Nagar, offering personalised classical homoeopathic care for patients of all ages — in-clinic, by phone, and via video consultation.</p>
       </div>
     </div>
   </div>
@@ -917,7 +921,10 @@
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — precise, personalised treatment for every patient.</p></div>
+        <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — in-clinic, phone or video. Personalised for every patient.</p></div>
+            <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><span class="service-name">Online consultation</span><p class="service-desc">Phone or video consultation available — consult from anywhere in India.</p></div>
       </div>
     </div>
   </div>
@@ -942,8 +949,8 @@
         <div class="stat-label">Conditions treated</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">9AM–9PM</div>
-        <div class="stat-label">Open every day</div>
+        <div class="stat-num">9–1 & 5–9</div>
+        <div class="stat-label">Mon–Sat · Sun on call</div>
       </div>
     </div>
   </div>
@@ -1009,7 +1016,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Do you accept walk-in patients? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes, walk-ins are welcome any day between 9 AM and 9 PM. Booking an appointment in advance ensures minimal waiting time.</div>
+        <div class="faq-a">Yes, walk-ins are welcome Mon–Sat, 9 AM–1 PM and 5–9 PM. For Sunday, Thursday evenings and public holidays, please call 98492 72193 to confirm availability.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Are homoeopathic medicines addictive? <span class="faq-icon">+</span></button>
@@ -1026,16 +1033,33 @@
     <h2 class="section-heading">Book an appointment</h2>
     <div class="appointment-box">
       <h3>Schedule your consultation</h3>
-      <p>Pick a convenient time slot and we will confirm your appointment by phone.</p>
+      <p>Choose your preferred consultation mode and pick a convenient time slot.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;">
+        <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">🏥</div>
+          <div style="font-size:11px;color:#a7f3d0;font-weight:500;">In-clinic</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:2px;">Visit us</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">📱</div>
+          <div style="font-size:11px;color:#a7f3d0;font-weight:500;">Phone call</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:2px;">Anywhere</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:12px;text-align:center;">
+          <div style="font-size:22px;margin-bottom:4px;">💻</div>
+          <div style="font-size:11px;color:#a7f3d0;font-weight:500;">Video call</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:2px;">Anywhere</div>
+        </div>
+      </div>
       <div class="calendly-embed" style="padding:0;background:transparent;">
         <div class="calendly-inline-widget" data-url="https://calendly.com/vikramdevops123/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=1b4332&text_color=ffffff&primary_color=d97706" style="min-width:280px;height:630px;border-radius:10px;overflow:hidden;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
       <div class="hours-grid">
-        <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">9 AM – 9 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9 AM – 9 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9 AM – 9 PM</span></div>
-        <div class="hours-row"><span class="hours-day">Public holidays</span><span class="hours-time">Call to confirm</span></div>
+        <div class="hours-row"><span class="hours-day">Mon – Wed, Fri</span><span class="hours-time">9 AM–1 PM · 5–9 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9 AM–1 PM · Call to confirm eve</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9 AM–1 PM · 5–9 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday &amp; Holidays</span><span class="hours-time">Call to confirm</span></div>
       </div>
     </div>
   </div>
@@ -1071,7 +1095,7 @@
         </div>
         <div>
           <div class="contact-label">Hours</div>
-          <div class="contact-value">Every day · 9:00 AM to 9:00 PM</div>
+          <div class="contact-value">Mon–Sat: 9 AM–1 PM &amp; 5–9 PM<br>Sun, Thu eve &amp; Holidays: Call to confirm</div>
         </div>
       </div>
       <div class="contact-card">
@@ -1079,15 +1103,21 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div>
-          <div class="contact-label">Booking</div>
-          <div class="contact-value">Online via Calendly</div>
+          <div class="contact-label">Consultation modes</div>
+          <div class="contact-value">🏥 In-clinic &nbsp;·&nbsp; 📱 Phone &nbsp;·&nbsp; 💻 Video</div>
         </div>
       </div>
     </div>
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--cream-border);margin-bottom:4px;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.8!2d78.4437!3d17.4256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf081b19beb0b80c2!2sSai%20Krishna%20Teja%20Homoeo%20Clinic!5e0!3m2!1sen!2sin!4v1" width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sai Krishna Teja Homoeo Clinic location"></iframe>
-    </div>
-    <a href="https://share.google/T0sQ9J0MDxyGjhirT" target="_blank" style="display:block;text-align:center;font-size:13px;color:var(--green-mid);margin-bottom:16px;text-decoration:underline;">Get directions on Google Maps →</a>
+    <a href="https://share.google/T0sQ9J0MDxyGjhirT" target="_blank" class="map-directions-btn">
+      <div class="map-static">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div style="font-size:14px;font-weight:500;color:#1b4332;">Plot No. 61/A, Opp. More Super Market</div>
+          <div style="font-size:13px;color:#6b7280;margin-top:2px;">Vengal Rao Nagar, Hyderabad – 38</div>
+          <div style="font-size:12px;color:var(--green-mid);margin-top:6px;">Tap to open in Google Maps →</div>
+        </div>
+      </div>
+    </a>
     <div class="payment-warning">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       <div>
