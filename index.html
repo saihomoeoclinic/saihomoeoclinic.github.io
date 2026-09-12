@@ -399,6 +399,32 @@
   .service-name { font-size: 14px; font-weight: 500; color: var(--text-dark); display: block; margin-bottom: 4px; }
   .service-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
+  /* ── STATS ── */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card { background: var(--cream); border: 1px solid var(--cream-border); border-radius: var(--radius); padding: 16px; text-align: center; }
+  .stat-num { font-size: 22px; font-weight: 500; color: var(--green-dark); font-family: 'Lora', serif; }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .testimonial-card { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 12px; padding: 18px; }
+  .testimonial-stars { font-size: 14px; margin-bottom: 8px; }
+  .testimonial-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-style: italic; margin-bottom: 10px; }
+  .testimonial-author { font-size: 13px; font-weight: 500; color: var(--green-dark); }
+  .testimonial-condition { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: var(--cream); border: 1px solid var(--cream-border); border-radius: var(--radius); overflow: hidden; }
+  .faq-q { width: 100%; background: none; border: none; padding: 14px 16px; font-size: 14px; font-weight: 500; color: var(--green-dark); display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; font-family: 'Inter', sans-serif; }
+  .faq-icon { font-size: 18px; color: var(--green-mid); flex-shrink: 0; margin-left: 8px; transition: transform 0.2s; }
+  .faq-a { font-size: 13px; color: var(--text-mid); line-height: 1.7; padding: 0 16px 14px; display: none; }
+  .faq-a.open { display: block; }
+
+  /* ── WHATSAPP FLOAT ── */
+  .whatsapp-float-btn { position: fixed; bottom: 24px; right: 20px; width: 54px; height: 54px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; }
+  .whatsapp-float-btn svg { width: 28px; height: 28px; }
+
   /* ── APPOINTMENT ── */
   .appointment-box {
     background: var(--green-dark);
@@ -814,21 +840,21 @@
 <div class="trust-bar">
   <div class="trust-item">
     <div class="trust-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
     </div>
-    B.H.M.S. Certified Physician
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
-    </div>
-    Open every day · 9 AM – 9 PM
+    20,000+ patients treated
   </div>
   <div class="trust-item">
     <div class="trust-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
     </div>
-    Computerised treatment
+    25+ years experience
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1b4332" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    B.H.M.S. Certified · Open 9 AM–9 PM
   </div>
 </div>
 
@@ -886,6 +912,97 @@
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — precise, personalised treatment for every patient.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <p class="section-eyebrow">Why choose us</p>
+    <h2 class="section-heading">Trusted by patients across Hyderabad</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">20,000+</div>
+        <div class="stat-label">Patients treated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Years experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Conditions treated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">9AM–9PM</div>
+        <div class="stat-label">Open every day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="section-inner">
+    <p class="section-eyebrow">Patient reviews</p>
+    <h2 class="section-heading">What our patients say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Dr Sumanth is an excellent doctor, he listens to patients with utmost patience and treats with great care. He has been our GO-TO doctor for our family since quite a few years. My mother in law had her leg and knee pain treated and is now comfortable doing her daily work without any issues."</p>
+        <div class="testimonial-author">Jayasri Vuyyuri</div>
+        <div class="testimonial-condition">Joint pain treatment · 2 months ago</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Good doctor and he listens to patients with utmost patience. He treated my skin related issue with simple intake pills without any external applications. It was cured and became normal. My wife also got rid of sinusitis problem with his medicines."</p>
+        <div class="testimonial-author">Patakamudi Krishna</div>
+        <div class="testimonial-condition">Skin & sinusitis treatment · Vijayawada</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"The doctor takes the time to listen and provide personalised care. I appreciate their holistic approach and attention to detail. Highly recommended for anyone seeking homoeopathic treatment."</p>
+        <div class="testimonial-author">Sangeetha</div>
+        <div class="testimonial-condition">General consultation · 4 months ago</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"I had a truly wonderful experience with Sumanth Garu. Highly recommend."</p>
+        <div class="testimonial-author">Vikram Kumar</div>
+        <div class="testimonial-condition">Verified Google review</div>
+      </div>
+    </div>
+    <a href="https://g.page/r/CbmCDw_rGYH0EBE/review" target="_blank" style="display:inline-block;margin-top:16px;font-size:13px;color:var(--green-mid);text-decoration:underline;">View all reviews on Google →</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <p class="section-eyebrow">Common questions</p>
+    <h2 class="section-heading">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is homoeopathy safe for children? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — homoeopathic medicines are completely safe for children of all ages, including newborns, with zero side effects.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does treatment take? <span class="faq-icon">+</span></button>
+        <div class="faq-a">It depends on the condition. Acute issues like fever or cold resolve in days. Chronic conditions like arthritis or skin disorders may take 2–6 months for lasting results.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is computerised homoeopathy? <span class="faq-icon">+</span></button>
+        <div class="faq-a">A modern diagnostic method that analyses your symptoms precisely using software to select the most suitable homoeopathic remedy — more accurate than traditional methods.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you accept walk-in patients? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes, walk-ins are welcome any day between 9 AM and 9 PM. Booking an appointment in advance ensures minimal waiting time.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are homoeopathic medicines addictive? <span class="faq-icon">+</span></button>
+        <div class="faq-a">No — homoeopathic medicines are non-addictive and have no harmful side effects. They work gently with your body's natural healing process.</div>
       </div>
     </div>
   </div>
@@ -1021,6 +1138,10 @@
   <p class="footer-copy" style="margin-top:6px;">This website does not collect payments or sensitive personal data. Do not share financial or confidential information through this site.</p>
 </footer>
 
+<a href="https://wa.me/919849272193" class="whatsapp-float-btn" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+</a>
+
 <script>
   function showError(id) {
     document.getElementById(id).classList.add('input-error');
@@ -1054,6 +1175,13 @@
 
     var url = "https://wa.me/919849272193?text=" + encodeURIComponent(message);
     window.open(url, '_blank');
+  }
+
+  function toggleFaq(btn) {
+    var answer = btn.nextElementSibling;
+    var icon = btn.querySelector('.faq-icon');
+    answer.classList.toggle('open');
+    icon.textContent = answer.classList.contains('open') ? '−' : '+';
   }
 
   function toggleMenu() {
