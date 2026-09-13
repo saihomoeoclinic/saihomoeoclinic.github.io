@@ -574,6 +574,17 @@
   }
   .whatsapp-float-btn svg { position: relative; z-index: 1; }
 
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .review-btn {
+    background: linear-gradient(90deg, #4285F4 40%, #6fa8ff 50%, #4285F4 60%) !important;
+    background-size: 200% auto !important;
+    animation: shimmer 2.5s linear infinite !important;
+  }
+  .review-btn:hover { animation: none !important; background: #4285F4 !important; }
+
   /* ── BACK TO TOP ── */
   .back-to-top {
     position: fixed;
@@ -1003,7 +1014,7 @@
   <p class="hero-sub">Dr. Ch. Sumanth Kumar · B.H.M.S. (Osm)</p>
   <p class="hero-loc">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    Plot No. 61/A, Vengal Rao Nagar, Hyderabad - 38
+    Plot No. 61/A, SR Nagar, Vengal Rao Nagar, Hyderabad - 38
   </p>
   <div class="hero-btns">
     <a href="#appointment" class="btn-primary">
@@ -1141,10 +1152,10 @@
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — in-clinic, phone or video. Personalised for every patient.</p></div>
+        <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — in-clinic, phone or video. Personalised for every patient.</p><a href="homoeopathy.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
             <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div><span class="service-name">Online consultation</span><p class="service-desc">Phone or video consultation available — consult from anywhere in India.</p></div>
+        <div><span class="service-name">Online consultation</span><p class="service-desc">Phone or video consultation available — consult from anywhere in India.</p><a href="homoeopathy.html#appointment" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Book now →</a></div>
       </div>
     </div>
   </div>
@@ -1306,7 +1317,7 @@
         </div>
         <div>
           <div class="contact-label">Address</div>
-          <div class="contact-value">Plot No. 61/A, Adj to Ambedkar Statue, Opp. More Super Market, Vengal Rao Nagar, Hyderabad – 38</div>
+          <div class="contact-value">Plot No. 61/A, Adj to Ambedkar Statue, Opp. More Super Market, SR Nagar, Vengal Rao Nagar, Hyderabad – 38</div>
         </div>
       </div>
       <div class="contact-card">
@@ -1400,7 +1411,7 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-name">Sai Krishna Teja Homoeo Stores &amp; Clinic</p>
-  <p class="footer-address">Plot No. 61/A, Adj to Ambedkar Statue, Opp. More Super Market, Vengal Rao Nagar, Hyderabad – 38 · 98492 72193</p>
+  <p class="footer-address">Plot No. 61/A, Adj to Ambedkar Statue, Opp. More Super Market, SR Nagar, Vengal Rao Nagar, Hyderabad – 38 · 98492 72193</p>
   <p class="footer-quote">"Live Life. Don't Live Away Life"</p>
   <p class="footer-quote-attr">— Master E.K.</p>
   <p class="footer-copy">© 2026 Sai Krishna Teja Homoeo Clinic. All rights reserved.</p>
