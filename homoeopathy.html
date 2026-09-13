@@ -70,6 +70,44 @@
   .whatsapp-float{position:fixed;bottom:80px;right:20px;width:54px;height:54px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(37,211,102,0.4);z-index:999;text-decoration:none}
   .whatsapp-float svg{width:28px;height:28px}
   @media(max-width:600px){nav{padding:0 12px}section{padding:32px 14px}}
+
+  @keyframes bounce {
+    0%, 90%, 100% { transform: translateY(0); }
+    93% { transform: translateY(-6px); }
+    97% { transform: translateY(-3px); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+  @keyframes call-ring {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+  }
+  .btn-primary { animation: bounce 3s ease-in-out infinite; }
+  .btn-primary:hover { animation: none; }
+  .btn-outline { animation: call-ring 2s ease-in-out infinite; }
+  .btn-outline:hover { animation: none; }
+  .whatsapp-float { position: relative; }
+  .whatsapp-float::before {
+    content: '';
+    position: absolute;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: #25d366;
+    opacity: 0.6;
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  .whatsapp-float::after {
+    content: '';
+    position: absolute;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: #25d366;
+    opacity: 0.3;
+    animation: pulse-ring 2s ease-out infinite 0.5s;
+  }
+  .whatsapp-float svg { position: relative; z-index: 1; }
 </style>
 </head>
 <body>
@@ -100,7 +138,7 @@
 </div>
 
 <div class="hero">
-  <div class="hero-icon">🌿</div>
+  <div class="hero-icon">🌱</div>
   <div class="hero-badge">Classical Homoeopathy · Dr. Ch. Sumanth Kumar</div>
   <h1>What is Classical Homoeopathy?</h1>
   <p>A 200-year-old system of medicine that treats the whole person — not just the disease — using natural substances to stimulate the body's own healing.</p>
