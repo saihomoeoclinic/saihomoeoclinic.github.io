@@ -531,6 +531,10 @@
   .map-static { background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:18px; display:flex; gap:14px; align-items:center; }
 
   /* ── ANIMATIONS ── */
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
   @keyframes bounce {
     0%, 90%, 100% { transform: translateY(0); }
     93% { transform: translateY(-6px); }
@@ -574,16 +578,7 @@
   }
   .whatsapp-float-btn svg { position: relative; z-index: 1; }
 
-  @keyframes shimmer {
-    0% { background-position: -200% center; }
-    100% { background-position: 200% center; }
-  }
-  .review-btn {
-    background: linear-gradient(90deg, #4285F4 40%, #6fa8ff 50%, #4285F4 60%) !important;
-    background-size: 200% auto !important;
-    animation: shimmer 2.5s linear infinite !important;
-  }
-  .review-btn:hover { animation: none !important; background: #4285F4 !important; }
+
 
   /* ── BACK TO TOP ── */
   .back-to-top {
@@ -834,7 +829,6 @@
 
   .review-btn {
     width: 100%;
-    background: #4285F4;
     color: var(--white);
     border: none;
     padding: 14px;
@@ -848,9 +842,11 @@
     gap: 10px;
     text-decoration: none;
     margin-bottom: 12px;
-    transition: opacity 0.2s;
+    background: linear-gradient(90deg, #4285F4 30%, #6fa8ff 50%, #4285F4 70%);
+    background-size: 200% auto;
+    animation: shimmer 2.5s linear infinite;
   }
-  .review-btn:hover { opacity: 0.9; }
+  .review-btn:hover { animation: none; background: #4285F4; }
 
   .whatsapp-btn {
     width: 100%;
@@ -1122,34 +1118,34 @@
     <p class="section-eyebrow">What we treat</p>
     <h2 class="section-heading">Conditions treated</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <a href="migraine.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <div><span class="service-name">Migraine &amp; headaches</span><p class="service-desc">Personalised remedies targeting root cause — not just pain relief.</p><a href="migraine.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Migraine &amp; headaches</span><p class="service-desc">Personalised remedies targeting root cause — not just pain relief.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="diabetes.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <div><span class="service-name">Chronic diseases</span><p class="service-desc">Diabetes, thyroid, hypertension — managed with zero side effects.</p><a href="diabetes.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Chronic diseases</span><p class="service-desc">Diabetes, thyroid, hypertension — managed with zero side effects.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="skin.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><span class="service-name">Skin disorders</span><p class="service-desc">Eczema, psoriasis, acne — treated from within, not just topically.</p><a href="skin.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Skin disorders</span><p class="service-desc">Eczema, psoriasis, acne — treated from within, not just topically.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="respiratory.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><span class="service-name">Respiratory issues</span><p class="service-desc">Asthma, allergies, sinusitis — long-term relief through homoeopathy.</p><a href="respiratory.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Respiratory issues</span><p class="service-desc">Asthma, allergies, sinusitis — long-term relief through homoeopathy.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="arthritis.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-        <div><span class="service-name">Joint &amp; bone pain</span><p class="service-desc">Arthritis, back pain, sciatica — reduced pain without steroids.</p><a href="arthritis.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Joint &amp; bone pain</span><p class="service-desc">Arthritis, back pain, sciatica — reduced pain without steroids.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="digestive.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <div><span class="service-name">Digestive problems</span><p class="service-desc">IBS, acidity, constipation — gentle, effective gut healing.</p><a href="digestive.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
-      <div class="service-card">
+        <div><span class="service-name">Digestive problems</span><p class="service-desc">IBS, acidity, constipation — gentle, effective gut healing.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
+      <a href="children.html" class="service-card" style="text-decoration:none;">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div><span class="service-name">Paediatric care</span><p class="service-desc">Safe for children — fever, allergies, growth issues treated gently.</p><a href="children.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
-      </div>
+        <div><span class="service-name">Paediatric care</span><p class="service-desc">Safe for children — fever, allergies, growth issues treated gently.</p><span style="font-size:12px;color:var(--green-mid);margin-top:6px;display:inline-block;">Learn more →</span></div>
+      </a>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <div><span class="service-name">General consultation</span><p class="service-desc">Computerised diagnosis — in-clinic, phone or video. Personalised for every patient.</p><a href="homoeopathy.html" style="font-size:12px;color:var(--green-mid);text-decoration:none;margin-top:6px;display:inline-block;">Learn more →</a></div>
